@@ -7,7 +7,11 @@
 
 .search_form {
   /* margin: auto; */
-  background: #333;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(147, 126, 54, 0) 154.14%
+  );
   padding: 10px 40px;
   border-radius: 10px;
   height: 150px;
@@ -34,15 +38,24 @@
 
 .search_form button {
   padding: 10px 40px;
-  background: #6cc644;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 114, 102, 0.75) 0%,
+    rgba(147, 126, 54, 0) 154.14%
+  );
   color: #fff;
   margin: 0px 10px;
 }
 .search_results {
-  background: rgb(216, 216, 216);
+  background: linear-gradient(
+    180deg,
+    rgba(20, 114, 102, 0.75) 0%,
+    rgba(147, 126, 54, 0) 154.14%
+  );
   border-radius: 10px;
   margin-top: 20px;
   padding: 10px 30px;
+  width: 100%;
 }
 
 .user {
