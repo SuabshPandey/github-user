@@ -1,0 +1,41 @@
+.search_results {
+    background: linear-gradient(
+      180deg,
+      rgba(20, 114, 102, 0.75) 0%,
+      rgba(147, 126, 54, 0) 154.14%
+    );
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px 30px;
+    width: 100%;
+  }
+  
+  .user {
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+    padding: 0px 30px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+  }
+  
+  .image_div {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .user_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .user_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 20px;
+  }
+  

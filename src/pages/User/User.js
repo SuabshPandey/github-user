@@ -9,7 +9,7 @@ const User = () => {
         <div className={styles.user_image_div}>
           <img
             className={styles.user_image}
-            src="images/me-rect.jpg"
+            src="/images/me-rect.jpg"
             alt="user"
           />
         </div>
