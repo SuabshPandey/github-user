@@ -3,7 +3,6 @@ import styles from "./UserComponent.module.css";
 import { NavLink } from "react-router-dom";
 
 const UserComponent = ({ user }) => {
-  console.log("UserComponent", user);
   return (
     <div>
       
