@@ -18,6 +18,7 @@
   border-radius: 10px;
   text-align: center;
   margin-bottom: 20px;
+  border: 1px solid rgba(189, 188, 188, 0.5);
 }
 
 .back_btn {
@@ -48,6 +49,7 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
+  border: 1px solid rgba(189, 188, 188, 0.5);
   color: #fff;
 }
 
@@ -81,7 +83,6 @@
 }
 
 .user_repos {
-  margin-top: 20px;
   padding: 20px;
   background: linear-gradient(
     180deg,
@@ -111,6 +112,24 @@
 }
 .repo_icons {
   margin-right: 5px;
+}
+
+.user_repo_list {
+  border: 1px solid rgba(179, 177, 177, 0.4);
+  height: 600px;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-top: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 0.2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(87, 87, 87);
+  outline: 1px solid rgb(143, 143, 143);
+  border-radius: 3px;
 }
 
 a {

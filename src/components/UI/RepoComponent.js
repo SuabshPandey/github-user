@@ -26,7 +26,7 @@ const RepoComponent = ({ repo }) => {
             Watcher <b> {repo?.watchers_count}</b>
           </small>
           <small className={styles.repo_activity}>
-            <Icon className={styles.repo_icons} icon="akar-icons:eye" />
+            <Icon className={styles.repo_icons} icon="cil:star" />
             Stars <b> {repo?.stargazers_count}</b>
           </small>
           <small className={styles.repo_activity}>

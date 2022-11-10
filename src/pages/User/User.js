@@ -4,6 +4,7 @@ import styles from "./User.module.css";
 import { NavLink, useParams } from "react-router-dom";
 import { baseUrl } from "../../axiosInstance";
 import RepoComponent from "../../components/UI/RepoComponent";
+import Loader from "../../components/common/Loader";
 
 const User = () => {
   const param = useParams().login;
@@ -13,6 +14,7 @@ const User = () => {
 
   const [userDetail, setUserDetail] = useState({});
   const [userRepos, setUserRepos] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   // Pagination Function
   const handlePrev = () => {
@@ -34,6 +36,7 @@ const User = () => {
   };
 
   useEffect(() => {
+    setLoading(true);
     const fetchUserDetail = async () => {
       const { data } = await baseUrl.get(`/users/${param}`);
       const repoResponse = await baseUrl.get(
@@ -44,6 +47,7 @@ const User = () => {
       console.log("User", data);
       console.log("Repos", repoResponse?.data);
       setUserRepos(repoResponse?.data);
+      setLoading(false);
     };
     fetchUserDetail();
     // eslint-disable-next-line
@@ -106,33 +110,41 @@ const User = () => {
           </div>
         </div>
       </div>
-      <div className={styles.user_repo_list}>
-        <div className={styles.page_options}>
-          <label>
-            <small>Per Page</small>
-            <select onChange={handlePageLimit}>
-              <option value="10">10</option>
-              <option value="20">25</option>
-              <option value="50">50</option>
-            </select>
-          </label>
-          <small className={styles.total_pages}>
-            Total Repsitory:{" "}
-            {userDetail.public_repos ? userDetail.public_repos : 0}
-          </small>
+      <div className={styles.page_options}>
+        <label>
+          <small>Per Page</small>
+          <select onChange={handlePageLimit}>
+            <option value="10">10</option>
+            <option value="20">25</option>
+            <option value="50">50</option>
+          </select>
+        </label>
+        <small className={styles.total_pages}>
+          Total Repsitory:{" "}
+          {userDetail.public_repos ? userDetail.public_repos : 0}
+        </small>
 
-          <div className={styles.pagination_div}>
-            <button onClick={handlePrev}>{page}</button>
-            <button onClick={handleNext}>{page + 1}</button>
-          </div>
+        <div className={styles.pagination_div}>
+          <button onClick={handlePrev}>{page}</button>
+          <button onClick={handleNext}>{page + 1}</button>
         </div>
-        {userRepos ? (
-          userRepos.map((repo) => {
-            return <RepoComponent key={repo.id} repo={repo} />;
-          })
+      </div>
+      <div className={styles.user_repo_list}>
+        {loading ? (
+          <>
+            <Loader />
+          </>
         ) : (
           <>
-            <h2>No Repos</h2>
+            {userRepos ? (
+              userRepos.map((repo) => {
+                return <RepoComponent key={repo.id} repo={repo} />;
+              })
+            ) : (
+              <>
+                <h2>No Repos</h2>
+              </>
+            )}
           </>
         )}
       </div>
