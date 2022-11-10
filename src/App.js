@@ -1,13 +1,13 @@
-import Home from "./components/pages/Home/Home";
+import Home from "./pages/Home/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import User from "./components/pages/User/User";
+import User from "./pages/User/User";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/user" element={<User />} />
+        <Route path="/user/:login" element={<User />} />
       </Routes>
     </Router>
   );

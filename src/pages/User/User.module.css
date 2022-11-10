@@ -5,12 +5,41 @@
   margin-top: 20px;
 }
 
+.back_btn_div {
+  width: 25%;
+  cursor: pointer;
+  margin-top: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(147, 126, 54, 0) 154.14%
+  );
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.back_btn {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back_icon {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
 .user_information {
   background: linear-gradient(
     180deg,
     rgba(20, 114, 102, 0.75) 0%,
     rgba(147, 126, 54, 0) 154.14%
   );
+  font-weight: 600;
   /* padding: 10px 40px; */
   border-radius: 10px;
   height: 250px;
@@ -82,4 +111,10 @@
 }
 .repo_icons {
   margin-right: 5px;
+}
+
+a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
 }

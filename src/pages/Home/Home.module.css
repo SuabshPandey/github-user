@@ -1,3 +1,4 @@
+/* Search Input Section */
 .home_container {
   width: 50%;
   height: auto;
@@ -46,6 +47,9 @@
   color: #fff;
   margin: 0px 10px;
 }
+
+/* Search Result Section */
+
 .search_results {
   background: linear-gradient(
     180deg,
@@ -62,8 +66,8 @@
   display: flex;
   align-items: center;
   margin: 20px 0px;
-  padding: 0px 30px;
-  border-bottom: 1px solid rgb(0, 0, 0);
+  padding: 0px 0px;
+  /* border-bottom: 2px dashed rgb(238, 51, 51); */
 }
 
 .image_div {
@@ -85,4 +89,34 @@
   padding: 10px;
   margin-left: 20px;
   font-size: 20px;
+}
+
+/* Pagination Section */
+.page_options select {
+  padding: 5px;
+  padding-top: 10px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  margin-left: 5px;
+}
+
+.pagination_div button {
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(147, 126, 54, 0) 154.14%
+  );
+  color: #fff;
+  margin: 0px 3px;
+}
+
+.page_options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
