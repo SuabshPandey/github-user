@@ -118,3 +118,46 @@ a {
   text-decoration: underline;
   font-weight: 600;
 }
+
+/* Pagination Section */
+.page_options {
+  border: 1px solid rgba(211, 211, 211, 0.4);
+  margin-top: 10px;
+  padding: 10px;
+  background: linear-gradient(
+    177.85deg,
+    rgba(131, 69, 209, 0.6) 1.81%,
+    rgba(109, 21, 21, 0) 109.76%,
+    rgba(82, 179, 156, 0.476436) 109.76%,
+    rgba(135, 69, 183, 0.6) 109.76%
+  );
+  border-radius: 5px;
+}
+.page_options select {
+  padding: 5px;
+  padding-top: 10px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  margin-left: 5px;
+}
+
+.pagination_div button {
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(147, 126, 54, 0) 154.14%
+  );
+  color: #fff;
+  margin: 0px 3px;
+}
+
+.page_options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
