@@ -1,0 +1,8 @@
+.loader {
+  width: 100%;
+  height: 200px;
+  margin: auto;
+  background: url(https://github.githubassets.com/images/spinners/octocat-spinner-128.gif)
+    no-repeat center;
+}
+

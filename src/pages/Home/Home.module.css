@@ -91,7 +91,38 @@
   font-size: 20px;
 }
 
+.user_data_list {
+  /* border: 1px solid rgba(179, 177, 177, 0.4); */
+  height: 600px;
+  /* overflow: hidden; */
+  overflow-y: scroll;
+  margin-top: 20px;
+}
+::-webkit-scrollbar {
+  width: 0.2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(87, 87, 87);
+  outline: 1px solid rgb(143, 143, 143);
+  border-radius: 3px;
+}
+
+
 /* Pagination Section */
+.page_options {
+  border: 1px solid rgba(211, 211, 211, 0.4);
+  margin-top: 10px;
+  padding: 10px;
+  background: linear-gradient(
+    177.85deg,
+    rgba(131, 69, 209, 0.6) 1.81%,
+    rgba(109, 21, 21, 0) 109.76%,
+    rgba(82, 179, 156, 0.476436) 109.76%,
+    rgba(135, 69, 183, 0.6) 109.76%
+  );
+  border-radius: 5px;
+}
 .page_options select {
   padding: 5px;
   padding-top: 10px;
@@ -119,4 +150,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.header_div {
+  text-align: center;
+  margin: 50px 0px;
 }

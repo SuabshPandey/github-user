@@ -9,10 +9,11 @@
 }
 
 .user_repos {
-  margin-top: 20px;
+  margin-bottom: 10px;
   padding: 20px;
   padding-top: 40px;
   padding-bottom: 40px;
+  border: 1px solid rgba(189, 188, 188, 0.5);
 
   background: linear-gradient(
     180deg,

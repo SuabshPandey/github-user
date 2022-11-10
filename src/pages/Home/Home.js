@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Home.module.css";
 import { baseUrl } from "../../axiosInstance";
 import UserComponent from "../../components/UI/UserComponent";
+import Loader from "../../components/common/Loader";
 
 const Home = () => {
   const [inputQuery, setInputQuery] = useState("");
@@ -12,6 +13,7 @@ const Home = () => {
 
   const [limit, setLimit] = useState(10);
   const [totalPage, setTotalPage] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   // Grabbing the value of the input field
   const searchQuery = (e) => {
@@ -52,6 +54,7 @@ const Home = () => {
       console.log("Data", data);
 
       setTotalPage(data.total_count);
+      setLoading(false);
       return data?.items;
     } catch (error) {
       console.log(error);
@@ -60,6 +63,7 @@ const Home = () => {
   };
 
   const handleSearchUser = async (e) => {
+    setLoading(true);
     e.preventDefault();
     if (inputQuery) {
       const items = await fetchUsers();
@@ -70,11 +74,13 @@ const Home = () => {
   };
 
   useEffect(() => {
+    setLoading(true);
     const limitUserDisplay = async () => {
       if (inputQuery !== "") {
         const items = await fetchUsers();
         setUsers(items);
       }
+      setLoading(false);
     };
     limitUserDisplay();
     // eslint-disable-next-line
@@ -82,6 +88,17 @@ const Home = () => {
 
   return (
     <div className={`${styles.home_container} container`}>
+      {/* <Loader /> */}
+      <div className={styles.header_div}>
+        <h1 className={styles.header_text}>
+          Github User/Repository Search{" "}
+          <span className={styles.header_span}>App</span>
+          {/* Single Page Application For GitHub Repositories Listing */}
+        </h1>
+        <p className={styles.header_para}>
+          Single Page Application For GitHub Repositories Listing
+        </p>
+      </div>
       <div className={styles.search_form}>
         <h2>Search Github Users</h2>
         <form>
@@ -90,45 +107,55 @@ const Home = () => {
             value={inputQuery}
             onChange={searchQuery}
             // disabled={users.length > 0 ? true : false}
-            placeholder="Enter username..."
+            placeholder="Enter github username..."
           />
           <button onClick={handleSearchUser} disabled={inputQuery.length < 1}>
             Search
           </button>
         </form>
       </div>
-      <div className={styles.search_results}>
-        <div className={styles.page_options}>
-          <label>
-            <small>Per Page</small>
-            <select onChange={handlePageLimit}>
-              <option value="10">10</option>
-              <option value="25">25</option>
-              <option value="50">50</option>
-            </select>
-          </label>
-          <small className={styles.total_pages}>Total Users: {totalPage}</small>
-          <div className={styles.pagination_div}>
-            <button onClick={handlePrev}>{page}</button>
-            <button
-              onClick={handleNext}
-              // disabled={totalPage-1}
-            >
-              {page + 1}
-            </button>
-          </div>
+      <div className={styles.page_options}>
+        <label>
+          <small>Per Page</small>
+          <select onChange={handlePageLimit}>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+          </select>
+        </label>
+        <small className={styles.total_pages}>Total Users: {totalPage}</small>
+        <div className={styles.pagination_div}>
+          <button onClick={handlePrev}>{page}</button>
+          <button
+            onClick={handleNext}
+            // disabled={totalPage-1}
+          >
+            {page + 1}
+          </button>
         </div>
-        {
-          // Displaying the users
-          users ? (
-            users.map((user) => {
-              return <UserComponent key={user?.id} user={user} />;
-            })
-          ) : (
-            <h2>There is nothing to display...</h2>
-          )
-        }
       </div>
+
+      {loading ? (
+        <>
+          <Loader />
+        </>
+      ) : (
+        <>
+          <div className={styles.user_data_list}>
+            {
+              // Displaying the users
+
+              users ? (
+                users.map((user) => {
+                  return <UserComponent key={user?.id} user={user} />;
+                })
+              ) : (
+                <h2>That's it buddy!...</h2>
+              )
+            }
+          </div>
+        </>
+      )}
     </div>
   );
 };

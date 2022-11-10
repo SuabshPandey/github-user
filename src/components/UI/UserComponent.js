@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./UserComponent.module.css";
+import { Icon } from "@iconify/react";
+
 import { NavLink } from "react-router-dom";
 
 const UserComponent = ({ user }) => {
   return (
-    <div>
+    <div className={styles.search_results}>
       <div className={styles.user}>
         <div className={styles.image_div}>
           <img
@@ -14,9 +16,25 @@ const UserComponent = ({ user }) => {
           />
         </div>
         <div className={styles.user_info}>
-          <h4>{user?.login}</h4>
-          <small>{user?.id}</small>
-          <NavLink to={`/user/${user?.login}`}>View Profile</NavLink>
+          <div className={`${styles.user_info_div}  ${styles.icon_text}`}>
+            <Icon className={`${styles.user_icons}`} icon="bxs:user-circle" />
+            <h3 className={styles.user_name}>{user?.login}</h3>
+          </div>
+          <div className={`${styles.user_info_div}  ${styles.icon_link}`}>
+            <Icon
+              className={`${styles.user_icons}`}
+              icon="ant-design:github-filled"
+            />
+            <a href={user?.html_url} rel="noreferrer" target="_blank">
+              View Github Profile
+            </a>
+          </div>
+          <div className={`${styles.user_info_div}  ${styles.icon_link}`}>
+            <Icon className={`${styles.user_icons}`} icon="bxs:user-detail" />
+            <NavLink className={styles.user_link} to={`/user/${user?.login}`}>
+              View Profile
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>
