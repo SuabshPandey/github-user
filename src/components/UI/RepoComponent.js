@@ -2,11 +2,20 @@ import React from "react";
 import styles from "./Repo.module.css";
 import { Icon } from "@iconify/react";
 
-const RepoComponent = ({ repo }) => {
+const RepoComponent = ({ repo, userdetails }) => {
+  
   return (
     <>
       <div className={styles.user_repos}>
-        <h3 className={styles.repo_name}>{repo?.name}</h3>
+        <h3 className={styles.repo_name}>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={`https://github.com/${userdetails?.login}/${repo?.name}`}
+          >
+            {repo?.name}
+          </a>
+        </h3>
         <p className={styles.repo_desp}>
           {repo.description
             ? `${repo.description.substring(0, 60)} \t...`

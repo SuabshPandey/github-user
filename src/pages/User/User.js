@@ -30,7 +30,7 @@ const User = () => {
   };
 
   const handlePageLimit = (e) => {
-    console.log("Option value", e.target.value);
+    
     const value = e.target.value;
     setLimit(parseInt(value));
   };
@@ -58,10 +58,7 @@ const User = () => {
       <div className={styles.back_btn_div}>
         <NavLink className={styles.back_btn} to="/">
           <small>Back</small>
-          <Icon
-            className={styles.back_icon}
-            icon="carbon:previous-filled"
-          />{" "}
+          <Icon className={styles.back_icon} icon="carbon:previous-filled" />
         </NavLink>
       </div>
 
@@ -74,7 +71,6 @@ const User = () => {
                 ? userDetail.avatar_url
                 : "/images/github.png"
             }
-            // src="/images/github.png"
             alt={userDetail ? userDetail.login : "user"}
           />
         </div>
@@ -120,7 +116,7 @@ const User = () => {
           </select>
         </label>
         <small className={styles.total_pages}>
-          Total Repsitory:{" "}
+          Total Repsitory:
           {userDetail.public_repos ? userDetail.public_repos : 0}
         </small>
 
@@ -138,7 +134,13 @@ const User = () => {
           <>
             {userRepos ? (
               userRepos.map((repo) => {
-                return <RepoComponent key={repo.id} repo={repo} />;
+                return (
+                  <RepoComponent
+                    key={repo.id}
+                    userdetails={userDetail}
+                    repo={repo}
+                  />
+                );
               })
             ) : (
               <>

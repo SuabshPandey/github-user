@@ -5,12 +5,11 @@ import UserComponent from "../../components/UI/UserComponent";
 import Loader from "../../components/common/Loader";
 
 const Home = () => {
+  // Use State Hooks
+
   const [inputQuery, setInputQuery] = useState("");
-
   const [users, setUsers] = useState([]);
-
   const [page, setPage] = useState(1);
-
   const [limit, setLimit] = useState(10);
   const [totalPage, setTotalPage] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -31,12 +30,11 @@ const Home = () => {
   };
 
   const handleNext = () => {
-    // setPage(page + 1);
+    
     setPage((page) => page + 1);
   };
 
   const handlePageLimit = (e) => {
-    console.log("Option value", e.target.value);
     const value = e.target.value;
     setLimit(parseInt(value));
   };
@@ -45,19 +43,21 @@ const Home = () => {
 
   const fetchUsers = async () => {
     try {
-      const { data } = await baseUrl.get("/search/users?q=" + inputQuery, {
-        params: {
-          page,
-          per_page: limit,
-        },
-      });
-      console.log("Data", data);
+      const { data } = await baseUrl.get(
+        "/search/repositories?q=" + inputQuery,
+        {
+          params: {
+            page,
+            per_page: limit,
+          },
+        }
+      );
 
       setTotalPage(data.total_count);
       setLoading(false);
       return data?.items;
     } catch (error) {
-      console.log(error);
+      alert(error);
       return null;
     }
   };
@@ -88,10 +88,9 @@ const Home = () => {
 
   return (
     <div className={`${styles.home_container} container`}>
-      {/* <Loader /> */}
       <div className={styles.header_div}>
         <h1 className={styles.header_text}>
-          Github User/Repository{" "}
+          Github Repository{" "}
           <span className={styles.header_span}>Search App</span>
         </h1>
         <p className={styles.header_para}>
@@ -107,7 +106,7 @@ const Home = () => {
             value={inputQuery}
             onChange={searchQuery}
             // disabled={users.length > 0 ? true : false}
-            placeholder="Enter github username..."
+            placeholder="Enter repository name..."
           />
           <button
             className={styles.search_btn}
@@ -132,7 +131,6 @@ const Home = () => {
           <button onClick={handlePrev}>{page}</button>
           <button
             onClick={handleNext}
-            // disabled={totalPage-1}
           >
             {page + 1}
           </button>
