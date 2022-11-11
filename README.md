@@ -1,4 +1,4 @@
-# Github User/Repository Search App
+# Github Repository Search App
 
 Single Page Application For GitHub Repositories Listing using React JS
 
@@ -17,13 +17,14 @@ Single Page Application For GitHub Repositories Listing using React JS
 #### User Search URL
 
 ```http
-  GET /search/users?q={query}{&page,per_page}
+  GET /search/repositories?q={query}{&page,per_page}
 ```
 
 | Parameter | Type     | Description              |
 | :-------- | :------- | :----------------------- |
 | `query`   | `string` | **Not Required** API key |
-| `query`   | `string` | **Not Required** API key |
+| `per_page`   | `number` | **Not Required** API key |
+| `page`   | `number` | **Not Required** API key |
 
 #### Get User Information
 
@@ -96,5 +97,5 @@ Start the server
 
 ## Screenshots
 
-![ss1](https://user-images.githubusercontent.com/53868484/201277563-70f87262-ef10-440e-b5e1-a9c049dc760b.png)
-![ss2](https://user-images.githubusercontent.com/53868484/201277580-a5551543-32c2-4696-9dab-8264ced6aaf3.png)
+![ss1](https://user-images.githubusercontent.com/53868484/201297282-e4d81094-ee14-497d-9155-d81a1b12a8ad.png)
+![ss2](https://user-images.githubusercontent.com/53868484/201297308-ce5f57d0-55ad-4f94-b647-c2d1f5d24a98.png)
