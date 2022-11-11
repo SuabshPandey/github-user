@@ -99,7 +99,7 @@ const Home = () => {
         <hr className={styles.hr_line} />
       </div>
       <div className={styles.search_form}>
-        <h2>Search Github Users</h2>
+        <h2>Search Github Repositories</h2>
         <form>
           <input
             type="text"
