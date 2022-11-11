@@ -96,5 +96,7 @@ Start the server
 
 ## Screenshots
 
-![App Screenshot](/relative/path/to/ss1.png?raw=true "App Screenshot")
-![App Screenshot](/relative/path/to/ss2.png?raw=true "App Screenshot")
+<!-- ![App Screenshot](/relative/path/to/ss1.png?raw=true "App Screenshot")
+![App Screenshot](/relative/path/to/ss2.png?raw=true "App Screenshot") -->
+
+![App Screenshot](https://github.com/SuabshPandey/github-user/blob/main/image.jpg?raw=true)
