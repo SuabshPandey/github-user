@@ -64,7 +64,6 @@
   border: 1px solid rgba(189, 188, 188, 0.5);
   color: #fff;
   box-shadow: 4px 5px 9px 2px rgba(51, 47, 47, 0.25);
-
 }
 
 .user_image_div {
@@ -72,6 +71,7 @@
   height: 200px;
   overflow: hidden;
   border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.88);
 }
 
 .user_image {
@@ -135,7 +135,6 @@
   overflow-y: scroll;
   margin-top: 20px;
   box-shadow: 4px 5px 9px 2px rgba(51, 47, 47, 0.25);
-
 }
 
 ::-webkit-scrollbar {
@@ -168,7 +167,6 @@ a {
   );
   border-radius: 5px;
   box-shadow: 4px 5px 9px 2px rgba(51, 47, 47, 0.25);
-
 }
 .page_options select {
   padding: 5px;

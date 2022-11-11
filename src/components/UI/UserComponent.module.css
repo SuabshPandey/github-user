@@ -22,6 +22,7 @@
   height: 100px;
   overflow: hidden;
   border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.88);
 }
 .user_img {
   width: 100%;
@@ -62,12 +63,6 @@
   gap: 10px;
   /* background: #000 !important; */
 }
-/* .user_info_div:not(:first-child):hover {
-  background: rgb(35, 67, 75) !important;
-  transition: all 0.3s ease-in-out;
-  padding: 5px;
-  border-radius: 4px;
-} */
 
 .user_info_div:last-child {
   border: 1px solid rgba(209, 209, 209, 0.5);
