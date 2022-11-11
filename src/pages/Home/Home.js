@@ -91,13 +91,13 @@ const Home = () => {
       {/* <Loader /> */}
       <div className={styles.header_div}>
         <h1 className={styles.header_text}>
-          Github User/Repository Search{" "}
-          <span className={styles.header_span}>App</span>
-          {/* Single Page Application For GitHub Repositories Listing */}
+          Github User/Repository{" "}
+          <span className={styles.header_span}>Search App</span>
         </h1>
         <p className={styles.header_para}>
           Single Page Application For GitHub Repositories Listing
         </p>
+        <hr className={styles.hr_line} />
       </div>
       <div className={styles.search_form}>
         <h2>Search Github Users</h2>
@@ -109,7 +109,11 @@ const Home = () => {
             // disabled={users.length > 0 ? true : false}
             placeholder="Enter github username..."
           />
-          <button onClick={handleSearchUser} disabled={inputQuery.length < 1}>
+          <button
+            className={styles.search_btn}
+            onClick={handleSearchUser}
+            disabled={inputQuery.length < 1}
+          >
             Search
           </button>
         </form>
