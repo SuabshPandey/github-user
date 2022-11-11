@@ -17,7 +17,7 @@ const UserComponent = ({ user }) => {
         </div>
         <div className={styles.user_info}>
           <div className={`${styles.user_info_div}  ${styles.icon_text}`}>
-            <Icon className={`${styles.user_icons}`} icon="bxs:user-circle" />
+            <Icon className={`${styles.user_icons}`} icon="mdi:user" />
             <h3 className={styles.user_name}>{user?.login}</h3>
           </div>
           <div className={`${styles.user_info_div}  ${styles.icon_link}`}>
@@ -32,7 +32,7 @@ const UserComponent = ({ user }) => {
           <div className={`${styles.user_info_div}  ${styles.icon_link}`}>
             <Icon className={`${styles.user_icons}`} icon="bxs:user-detail" />
             <NavLink className={styles.user_link} to={`/user/${user?.login}`}>
-              View Profile
+              View Details
             </NavLink>
           </div>
         </div>

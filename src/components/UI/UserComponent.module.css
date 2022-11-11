@@ -1,15 +1,15 @@
 .search_results {
   background: linear-gradient(
     180deg,
-    rgba(20, 114, 102, 0.75) 0%,
+    rgba(28, 54, 71, 0.75) 0%,
     rgba(147, 126, 54, 0) 154.14%
   );
   border-radius: 10px;
   padding: 10px 30px;
   width: 100%;
   margin-bottom: 20px;
+  box-shadow: 4px 5px 9px 2px rgba(51, 47, 47, 0.25);
 }
-
 .user {
   display: flex;
   align-items: center;
@@ -60,4 +60,24 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  /* background: #000 !important; */
+}
+/* .user_info_div:not(:first-child):hover {
+  background: rgb(35, 67, 75) !important;
+  transition: all 0.3s ease-in-out;
+  padding: 5px;
+  border-radius: 4px;
+} */
+
+.user_info_div:last-child {
+  border: 1px solid rgba(209, 209, 209, 0.5);
+  padding: 5px;
+  background: rgb(132, 134, 134) !important;
+  border-radius: 10px;
+}
+
+.user_info_div:last-child:hover {
+  transition: all 0.3s ease-in-out;
+  background: rgb(35, 67, 75) !important;
+  border-radius: 10px;
 }
