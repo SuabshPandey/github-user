@@ -20,7 +20,6 @@
   margin-bottom: 20px;
   transition: all 0.4s ease-in-out;
   box-shadow: 4px 5px 9px 2px rgba(51, 47, 47, 0.25);
-
   border: 1px solid rgba(189, 188, 188, 0.5);
 }
 
@@ -53,7 +52,6 @@
     rgba(147, 126, 54, 0) 154.14%
   );
   font-weight: 600;
-  /* padding: 10px 40px; */
   border-radius: 10px;
   height: 250px;
   display: flex;
