@@ -30,7 +30,6 @@ const Home = () => {
   };
 
   const handleNext = () => {
-    
     setPage((page) => page + 1);
   };
 
@@ -126,14 +125,12 @@ const Home = () => {
             <option value="50">50</option>
           </select>
         </label>
-        <small className={styles.total_pages}>Total Users: {totalPage}</small>
+        <small className={styles.total_pages}>
+          Total Repositories: {totalPage}
+        </small>
         <div className={styles.pagination_div}>
           <button onClick={handlePrev}>{page}</button>
-          <button
-            onClick={handleNext}
-          >
-            {page + 1}
-          </button>
+          <button onClick={handleNext}>{page + 1}</button>
         </div>
       </div>
 
