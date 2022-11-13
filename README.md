@@ -95,6 +95,13 @@ Start the server
   npm run start
 ```
 
+
+## Demo
+
+
+https://search-github-repo.netlify.app/
+
+
 ## Screenshots
 
 ![ss1](https://user-images.githubusercontent.com/53868484/201297282-e4d81094-ee14-497d-9155-d81a1b12a8ad.png)
